@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('cafeteria_id')->references('id')->on('cafeterias')->onDelete('cascade');
-            $table->foreign('categoria_id')->references('id')->on('categoria')->onDelete('cascade');
+            $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade');
         });
     }
 

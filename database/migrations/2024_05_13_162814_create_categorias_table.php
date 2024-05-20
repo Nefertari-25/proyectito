@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('categorias', function (Blueprint $table) {
             $table->id();
-            $table->string('Nombre');
-            $table->float('Marca');
-            $table->string('Tipo');
-            $table->timestamps();
+            $table->string('nombre');
+            $table->integer('precio');
+            $table->string('tipo');
+            $table->string('nomComerciante');
         });
     }
 

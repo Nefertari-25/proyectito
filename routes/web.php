@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CafeteriaController;
+use App\Http\Controllers\CategoriaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,5 +27,5 @@ Route::get('/index', function () {
 // Route::get('/producto',)
 Route:: resource('cafeteria', CafeteriaController::class);
 
-// Route:: resource('categoria', CategoriaController::class);
+Route:: resource('categoria', CategoriaController::class);
 

@@ -21,7 +21,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        //
+        return view('categoriaCreate');
     }
 
     /**
@@ -29,7 +29,14 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Categoria::create($request->all());
+        Categoria::create([
+            'nombre' => $request->input('nombre'),
+            'precio' => $request->integer('precio'),
+            'tipo' => $request->input('tipo'),
+            'nomComerciante' => $request->input('nomComerciante')
+        ]);
+        return redirect('/categoria');
     }
 
     /**
@@ -37,7 +44,7 @@ class CategoriaController extends Controller
      */
     public function show(Categoria $categoria)
     {
-        //
+        return view('/categoriaShow', compact('categoria'));
     }
 
     /**
@@ -45,7 +52,7 @@ class CategoriaController extends Controller
      */
     public function edit(Categoria $categoria)
     {
-        //
+        return view('categoriaEdit', compact('categoria'));
     }
 
     /**
@@ -53,7 +60,8 @@ class CategoriaController extends Controller
      */
     public function update(Request $request, Categoria $categoria)
     {
-        //
+        Producto::where('id', $categoria->id)->update($request->except('_token', '_method', 'action'));
+        return redirect('/categoria');
     }
 
     /**
@@ -61,6 +69,8 @@ class CategoriaController extends Controller
      */
     public function destroy(Categoria $categoria)
     {
-        //
+        $categoria->delete();
+        // Session()->flash('success', 'Se ha eliminado con éxito');
+        return redirect('/categoria');
     }
 }

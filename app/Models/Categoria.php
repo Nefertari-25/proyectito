@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Categoria extends Model
 {
-    protected $fillable = ['categoria'];
-    public $timestaps = false;
+    protected $fillable = ['nombre','precio','tipo','nomComerciante'];
+    public $timestamps = false;
     use HasFactory;
 
     public function cafeteria(){
