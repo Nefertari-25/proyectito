@@ -42,35 +42,38 @@ class CategoriaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Categoria $categoria)
+    public function show($id)
     {
-        return view('/categoriaShow', compact('categoria'));
+        $categoria = Categoria::findOrFail($id);
+        return view('/categoriaShow',compact('categoria'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Categoria $categoria)
+    public function edit($id)
     {
+        $categoria = Categoria::findOrFail($id);
         return view('categoriaEdit', compact('categoria'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Categoria $categoria)
+    public function update(Request $request,$id)
     {
-        Producto::where('id', $categoria->id)->update($request->except('_token', '_method', 'action'));
+        $id = Categoria::where('id', $id)->update($request->except('_token', '_method', 'action'));
         return redirect('/categoria');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Categoria $categoria)
+    public function destroy($id)
     {
-        $categoria->delete();
-        // Session()->flash('success', 'Se ha eliminado con éxito');
+        $id = Categoria::findOrFail($id);
+        $id->delete();
+        Session()->flash('success','Se ha eliminado con exito');
         return redirect('/categoria');
     }
 }
