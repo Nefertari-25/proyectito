@@ -12,15 +12,15 @@
         @csrf {{--seguridad dentro del formulario--}}
         <div>
             <label for="Nombre">Inserta nombre</label>
-            <input type="text" name="nombre" id="nombre">
+            <input type="text" name="Nombre" id="Nombre">
         </div>
         <div>
              <label for="Precio">Inserta el precio</label>
-             <input type="float" name="precio" id="precio">
+             <input type="float" name="Precio" id="Precio">
         </div>
         <div>
             <label for="Descripcion">Inserta su descripcion</label>
-            <input type="text" name="descripcion" id="descripcion">
+            <input type="text" name="Descripcion" id="Descripcion">
         </div>
         {{-- APARTADO DE INSERCIÓN --}}
         <div class="input-field">

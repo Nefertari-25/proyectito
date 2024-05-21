@@ -14,15 +14,15 @@
 
 			<div class="">
 				<label for="nombre">Nombre</label>
-				<input type="text" name="nombre" id="nombre" value="{{$cafeteria->Nombre}}"/>
+				<input type="text" name="Nombre" id="Nombre" value="{{$cafeteria->Nombre}}"/>
 			</div>
             <div class="">
 				<label for="precio">Precio</label>
-				<input type="text" name="precio" id="precio" value="{{$cafeteria->Precio}}">
+				<input type="text" name="Precio" id="Precio" value="{{$cafeteria->Precio}}">
 			</div>
 			<div class="">
 				<label for="descripcion">Descripcion</label>
-				<input type="text" name="descripcion" id="descripcion" value="{{$cafeteria->Descripcion}}">
+				<input type="text" name="Descripcion" id="Descripcion" value="{{$cafeteria->Descripcion}}">
 			</div>
 			<div class="">
 				<label for="categoria">Categorías</label>

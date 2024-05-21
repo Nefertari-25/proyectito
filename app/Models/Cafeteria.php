@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Cafeteria extends Model
 {
     use HasFactory;
-    protected $fillable = ['nombre', 'precio', 'descripcion'];
+    protected $fillable = ['Nombre', 'Precio', 'Descripcion'];
     public $timestamps = false; //omite el timestamps
 
     public function categoria()

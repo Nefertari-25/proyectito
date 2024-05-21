@@ -55,7 +55,7 @@ class CafeteriaController extends Controller
 
         //TERCERA MANERA
         // Cafeteria::create($request->all());
-        return redirect ('/cafeteria');
+        return redirect ('cafeteria');
         
     }
 
@@ -66,16 +66,22 @@ class CafeteriaController extends Controller
     {
         // dd($cafeteria);
         $cafeteria = Cafeteria::findOrFail($id);
-        return view('/cafeShow',compact('cafeteria'));
+        return view('cafeShow',compact('cafeteria'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id)
+    // public function edit($id)
+    // {
+    //     $categoria = Cafeteria::findOrFail($id);
+    //     return view('cafeEdit', compact('categoria','cafeteria'));
+    // }
+
+    public function edit(Cafeteria $cafeteria)
     {
-        $categoria = Cafeteria::findOrFail($id);
-        return view('cafeEdit', compact('categoria','cafeteria'));
+        $categoria = Categoria::all();
+        return view('cafeEdit', compact('categoria', 'cafeteria'));
     }
 
     /**
