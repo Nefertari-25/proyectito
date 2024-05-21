@@ -10,7 +10,7 @@
     @if (session()->has('success'))
         <p>Se borro exitosamente</p>
     @endif
-    <h1>Productos</h1>
+    <h1>Insumos</h1>
     <table>
         <thead>
             <tr>

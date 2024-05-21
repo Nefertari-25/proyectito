@@ -18,27 +18,35 @@
                 <th>Nombre</th>
                 <th>Precio</th>
                 <th>Descripcion</th>
+                <th>Ingredientes</th>
                 <th>Ver</th>
             </tr>
         </thead>
+        <tbody>
+            @foreach ($cafes as $pr)
+            <tr>
+                <td>{{$pr->id}}</td>
+                <td>{{$pr->Nombre}}</td>
+                <td>{{$pr->Precio}}</td>
+                <td>{{$pr->Descripcion}}</td>
+                <td>
+                    @foreach ($pr->categoria as $categoria)
+                        {{$categoria->nombre}}
+                    @endforeach
+                </td>
+                <td><a href="/cafeteria/{{$pr->id}}">Ir</a></td>
+                <td>
+                    <form method="POST" action="/cafeteria/{{$pr->id}}">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" name="action" value="Eliminar">
+                    </form>
+                </td>
+            </tr>
+            <pre></pre>
+            @endforeach
+        </tbody>
     </table>
-    <tbody>
-        @foreach ($cafes as $pr)
-        <tr>
-            <td>{{$pr->id}}</td>
-            <td>{{$pr->Nombre}}</td>
-            <td>{{$pr->Precio}}</td>
-            <td>{{$pr->Descripcion}}</td>
-            <td><a href="/cafeteria/{{$pr->id}}">Ir</a></td>
-            <form method="POST" action="/cafeteria/{{$pr->id}}">
-                @csrf
-                @method('DELETE')
-                <input type="submit" name="action" value="Eliminar">
-            </form>
-        </tr>
-        <pre></pre>
-        @endforeach
-    </tbody>
-    <a href="http://proyecto.test/cafeteria/create">Agregar nuevos productos</a>
+    <a class="agrPr" href="http://proyecto.test/cafeteria/create">Agregar nuevos productos</a>
 </body>
 </html>

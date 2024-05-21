@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categoria_cafeteria', function (Blueprint $table) {
+        Schema::create('cafeteria_categoria', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('cafeteria_id');
             $table->unsignedBigInteger('categoria_id');
             $table->timestamps();
 
-            $table->foreign('cafeteria_id')->references('id')->on('cafeterias')->onDelete('cascade');
-            $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade');
+            $table->foreign('cafeteria_id')->references('id')->on('cafeteria')->onDelete('cascade');
+            $table->foreign('categoria_id')->references('id')->on('categoria')->onDelete('cascade');
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categoria_cafeteria');
+        Schema::dropIfExists('cafeteria_categoria');
     }
 };

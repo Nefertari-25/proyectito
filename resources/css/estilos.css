@@ -3,10 +3,57 @@
     margin: 0%;
 }
 
-body{
-    background-color: blue;
-}
+table{
+    width: 100%;
+    border: 1px solid #000;
+    background: #000 url("gradient.gif") bottom left repeat-x;
+    color: #fff;
+ }
+ th, td, tr{
+    width: 5%;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid #000;
+    border-spacing: 0;
+    padding: 0.3em;
+    caption-side: bottom;
+    background: #fff;
+    color: #000;
+    
+ }
 
-h1{
-    color: blue;
-}
+ .agrPr{
+    text-align: center;
+    background-color:#009cde;
+    color:#ffffff;
+    text-decoration:none;
+ }
+
+ caption {
+    padding: 0.3em;
+    color: #fff;
+    background: #000;
+ }
+
+ th {
+    background: #eee;
+ }
+ .eliminar{
+    background-color: #e84236;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 10px;
+ }
+
+ .editar{
+    background-color: #fef550; 
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+ }

@@ -22,6 +22,16 @@
             <label for="Descripcion">Inserta su descripcion</label>
             <input type="text" name="descripcion" id="descripcion">
         </div>
+        {{-- APARTADO DE INSERCIÓN --}}
+        <div class="input-field">
+            <select id="categorias" name="insumos[]" multiple>
+                <option value="" disabled selected>Selecciona ingrediente</option>
+                @foreach($categoria as $categoria)
+                    <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
+                @endforeach
+            </select>
+            <label for="categorias">Ingredientes</label>
+         </div>
         <input type="submit" name="action" value="Enviar">
     </form>
 </body>

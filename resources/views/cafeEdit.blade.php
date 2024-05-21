@@ -24,11 +24,20 @@
 				<label for="descripcion">Descripcion</label>
 				<input type="text" name="descripcion" id="descripcion" value="{{$cafeteria->Descripcion}}">
 			</div>
-			
-
-			
-			
-			<input type="submit"  class="btn center" name="action" value="enviar">
+			<div class="">
+				<label for="categoria">Categorías</label>
+				<select name="insumos[]" id="insumos" multiple>
+					@foreach($categoria as $categoria)
+						<option value="{{ $categoria->id }}"
+							@if($cafeteria->categoria->contains($categoria->id)) selected @endif>
+							{{ $categoria->nombre }}
+						</option>
+					@endforeach
+				</select>
+			</div>
+			<div>
+				<input type="submit"  class="btn center" name="action" value="enviar">
+			</div>			
 		</form>
 </body>
 </html>
